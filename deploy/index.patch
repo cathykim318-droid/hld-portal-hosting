@@ -1,0 +1,86 @@
+diff --git a/public/staff/index.html b/public/staff/index.html
+index 5e2dc61..fa77891 100644
+--- a/public/staff/index.html
++++ b/public/staff/index.html
+@@ -9,7 +9,7 @@
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+   <link rel="stylesheet" href="https://use.typekit.net/kbg2gbz.css">
+   
+-  <link rel="stylesheet" href="./css/style.css?v=20260704-photo-crop-box">
++  <link rel="stylesheet" href="./css/style.css?v=20260831-redesign-navy">
+ 
+   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+@@ -19,7 +19,7 @@
+   <script src="./js/ui-controller.js?v=20260704-ipad-menu" defer></script>
+   <script src="./js/staff-help.js?v=20260614-preauth-queue-range" defer></script>
+   <script src="./js/auth.js?v=20260530-notification-404-safe" defer></script>
+-  <script src="./js/dashboard.js?v=20260531-task-actions" defer></script>
++  <script src="./js/dashboard.js?v=20260901-today" defer></script>
+   <script src="./js/treatment-plan.js?v=20260614-preauth-queue-range" defer></script>
+   <script src="./js/support-ticket.js?v=20260606-ticket-durable-save" defer></script>
+   <script src="./js/forms-message-mask.js?v=20260531-ticket-hipaa-safe" defer></script>
+@@ -90,47 +90,46 @@
+         <img src="/Logo_trans.webp" alt="Logo"> HLD OS
+       </div>
+       <div class="sidebar-menu">
++        <div class="menu-group">Front Desk</div>
+         <div class="menu-item active" onclick="switchOsView(event, 'dashboard', 'Tasks')">
+           <i class="fa-solid fa-list-check"></i> Tasks
+         </div>
+-
++        <div class="menu-item" onclick="switchOsView(event, 'schedule', 'Office Schedule & Appointments')">
++          <i class="fa-solid fa-calendar-days"></i> Schedule
++        </div>
++        <div class="menu-item" onclick="switchOsView(event, 'patients', 'Patient Management')">
++          <i class="fa-solid fa-users"></i> Patients
++        </div>
+         <div class="menu-item" onclick="switchOsView(event, 'forms', 'Forms Center')">
+           <i class="fa-solid fa-file-signature"></i> Forms Center
+         </div>
++        <div class="menu-item" onclick="window.open('http://127.0.0.1:8787','_blank')" title="Insurance eligibility verification (opens the front-desk tool)">
++          <i class="fa-solid fa-shield-halved"></i> Insurance Verify
++        </div>
+ 
++        <div class="menu-group">Follow-ups</div>
+         <button class="menu-item" type="button" onclick="switchOsView(event, 'call-list', 'Patient Call List')">
+           <i class="fa-solid fa-phone-volume"></i> Call List
+         </button>
+-
+         <button class="menu-item" type="button" onclick="switchOsView(event, 'pre-auth', 'Notice of Authorization')">
+           <i class="fa-solid fa-file-shield"></i> NOA
+         </button>
+-
+         <button class="menu-item" type="button" onclick="switchOsView(event, 'lab-cases', 'Lab Case Tracking & Follow-up')">
+           <i class="fa-solid fa-teeth"></i> Lab Cases
+         </button>
+ 
+-        <div class="menu-item" onclick="switchOsView(event, 'payplan', 'Payment Plan')">
+-          <i class="fa-solid fa-credit-card"></i> Payment Plan
+-        </div>
+-
+-        <div class="menu-item" onclick="switchOsView(event, 'schedule', 'Office Schedule & Appointments')">
+-          <i class="fa-solid fa-calendar-days"></i> Schedule
+-        </div>
+-
+-        <div class="menu-item" onclick="switchOsView(event, 'patients', 'Patient Management')">
+-          <i class="fa-solid fa-users"></i> Patients
+-        </div>
+-
++        <div class="menu-group">Clinical &amp; Billing</div>
+         <div class="menu-item" onclick="switchOsView(event, 'photos', 'Ortho Photos')">
+           <i class="fa-solid fa-camera-retro"></i> Photos
+         </div>
+-
+         <div class="menu-item" onclick="switchOsView(event, 'treatment-plan', 'Treatment Plan')">
+           <i class="fa-solid fa-clipboard-list"></i> Treatment Plan
+         </div>
++        <div class="menu-item" onclick="switchOsView(event, 'payplan', 'Payment Plan')">
++          <i class="fa-solid fa-credit-card"></i> Payment Plan
++        </div>
+ 
+-        <div class="menu-item" onclick="switchOsView(event, 'settings', 'Settings')">
++        <div class="menu-item" onclick="switchOsView(event, 'settings', 'Settings')" style="margin-top: 10px;">
+           <i class="fa-solid fa-gear"></i> Settings
+         </div>
+       </div>
