@@ -1,0 +1,23 @@
+/* Redesign restore (appended: later :root and rules win the cascade).
+   Base token swaps (nav-bg, brand, ink, line, bg) are applied by sed in the deploy step. */
+:root {
+  --brand-bright: #38bdf8;
+  --radius-card: 16px;
+  --radius-ctl: 10px;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+.menu-group {
+  font-size: 0.66rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #5b6675;
+  font-weight: 700;
+  padding: 16px 24px 6px;
+  user-select: none;
+}
+.menu-group:first-child { padding-top: 4px; }
+.menu-item i { color: rgba(255, 255, 255, 0.55); }
+.menu-item.active { background: rgba(56, 189, 248, 0.14); border-left-color: var(--brand-bright); }
+.menu-item.active i { color: var(--brand-bright); }
+.sidebar-header { color: #f8fafc; }
+.sidebar-header img { border-radius: 8px; }
