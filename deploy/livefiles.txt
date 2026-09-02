@@ -28,6 +28,7 @@ public/staff/hld-cherry-autofill-extension/README.md
 public/staff/hld-cherry-autofill-extension/cherry-content.js
 public/staff/hld-cherry-autofill-extension/manifest.json
 public/staff/hld-cherry-autofill-extension/portal-content.js
+public/staff/index.html
 public/staff/js/ai-admin-injector.js
 public/staff/js/ai-helper-injector.js
 public/staff/js/auth.js
